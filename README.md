@@ -6,25 +6,28 @@ Users upload scientific journal articles to the server and can ask questions thr
 
 RAG is used to retrieve relevant articles from the database of uploaded papers. The attached LLM can then provide relevant answers with evidence sourced from the given material.
 
-## Getting Started
+## Setup
 
-First, run the development server:
+### Set up the database
+In `/.env`, set the `DATABASE_URL` environment variable. Then,
+```bash
+npm run db:migrate
+```
+
+### Run the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
----
+Hey!
+
+## Other Notes
+
 ### Design Choices
 - 
 
