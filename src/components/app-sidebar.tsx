@@ -21,11 +21,11 @@ const items = [
   },
   {
     title: "New Chat",
-    url: "chat",
+    url: "/chat",
   },
   {
     title: "PDF Upload",
-    url: "/#",
+    url: "/pdfupload",
   },
 ];
 

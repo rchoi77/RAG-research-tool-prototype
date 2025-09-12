@@ -36,8 +36,9 @@ Hey!
 - Chunk.
 
 ### Features left to implement / future features:
-- address TODOs
-- Ability to keep one conversation going
+- address TODOs, remove // DEBUGs
+- error handling
+- Hashing pdf uploads, storing hash as id to prevent duplicate uploads. Also, responsive pdf upload UI.
 - User auth; save keys, security, SidebarFooter, etc.
 - Database key should really be stored in .env.local.
 - With user auth, add server storage of question history. Right now, history is client side and lost on refresh.
