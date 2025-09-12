@@ -36,6 +36,7 @@ Hey!
 - Chunk.
 
 ### Features left to implement / future features:
+- address TODOs
 - Ability to keep one conversation going
 - User auth; save keys, security, SidebarFooter, etc.
 - Database key should really be stored in .env.local.
@@ -44,4 +45,6 @@ Hey!
 ### Questions left unanswered:
 - Shared or personal pdf databases?
 - How do you clean up the database? Never? Automatically, or manually?
+- What to choose for db entry id lengths, vector embedding dimensions, etc.
+- What's a good maxOutputTokens? Do we need to be worried about limiting token usage? 
 

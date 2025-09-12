@@ -17,15 +17,15 @@ import { useChatHistoryContext } from "@/lib/ChatHistoryContext";
 const items = [
   {
     title: "Home",
-    url: "",
+    url: "/",
   },
   {
     title: "New Chat",
-    url: "#",
+    url: "chat",
   },
   {
     title: "PDF Upload",
-    url: "#",
+    url: "/#",
   },
 ];
 
