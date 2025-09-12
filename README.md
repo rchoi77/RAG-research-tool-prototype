@@ -8,11 +8,13 @@ RAG is used to retrieve relevant articles from the database of uploaded papers. 
 
 ## Setup
 
-### Set up the database
-In `/.env`, set the `DATABASE_URL` environment variable. Then,
+### Set up database and keys
+Create `/.env` and store `DATABASE_URL=<your key>` to store it as an environment variable. Then,
 ```bash
 npm run db:migrate
 ```
+
+Create `/.env.local` and store your Vercel [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started#set-up-your-api-key).
 
 ### Run the dev server
 
@@ -29,11 +31,14 @@ Hey!
 ## Other Notes
 
 ### Design Choices
-- 
+- PostgreSQL. Because it's free for my use case.
+- Vercel's AI Gateway. Easy way to offer multiple models, only needing one API key.
+- Chunk.
 
 ### Features left to implement / future features:
 - Ability to keep one conversation going
 - User auth; save keys, security, SidebarFooter, etc.
+- Database key should really be stored in .env.local.
 - With user auth, add server storage of question history. Right now, history is client side and lost on refresh.
 
 ### Questions left unanswered:
