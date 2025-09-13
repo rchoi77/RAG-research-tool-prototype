@@ -38,10 +38,12 @@ Hey!
 ### Features left to implement / future features:
 - address TODOs, remove // DEBUGs
 - error handling
+- Zod schema input validation for vector embedding generator. Previously, it took the same (validated) input as createResource in `src/lib/actions/resources.ts`, but now it doesn't, so input must also be validated.
 - Hashing pdf uploads, storing hash as id to prevent duplicate uploads. Also, responsive pdf upload UI.
-- User auth; save keys, security, SidebarFooter, etc.
 - Database key should really be stored in .env.local.
+- User auth; save keys, security, SidebarFooter, etc.
 - With user auth, add server storage of question history. Right now, history is client side and lost on refresh.
+- Store pdf uploads on the cloud instead of locally.
 
 ### Questions left unanswered:
 - Shared or personal pdf databases?

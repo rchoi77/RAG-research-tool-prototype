@@ -9,21 +9,20 @@ import { db } from '../db';
 import { generateEmbeddings } from '../ai/embedding';
 import { embeddings as embeddingsTable } from '../db/schema/embeddings';
 
-// TODO: import to pdf upload handler
-export const createResource = async (input: NewResourceParams) => {
+export const createResource = async (input: NewResourceParams, content: string) => {
   try {
-    const { content } = insertResourceSchema.parse(input);
-    // add to resources db
+    const { filename } = insertResourceSchema.parse(input);
+    // add filename to resources db
     const [resource] = await db
       .insert(resources)
-      .values({ content })
+      .values({ filename })
       .returning();
-    // chunk each resource and add embeddings to embeddings db, associate original resource
+    // chunk each resource's text and add embeddings to embeddings db. associate original resource
     const embeddings = await generateEmbeddings(content);
     await db.insert(embeddingsTable).values(
       embeddings.map(embedding => ({
         resourceId: resource.id,
-        ...embedding,
+        ...embedding, // expands to content: text, embedding: vector
       })),
     );
 
