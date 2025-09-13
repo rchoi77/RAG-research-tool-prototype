@@ -6,6 +6,9 @@ import { embeddings } from '../db/schema/embeddings';
 // TODO: un hardcode embedding model
 const embeddingModel = 'openai/text-embedding-3-small';
 
+ // TODO: let this be set by the user
+const maxRetrievedChunks = 4;
+
 // Resource chunk generating logic. Right now, split into sentences.
 const generateChunks = (input: string): string[] => {
   // TODO: revise chunking strategy
@@ -46,6 +49,6 @@ export const findRelevantContent = async (userQuery: string) => {
     .from(embeddings)
     .where(gt(similarity, 0.5))
     .orderBy(t => desc(t.similarity))
-    .limit(4); // TODO: set limit to k
+    .limit(maxRetrievedChunks);
   return similarGuides;
 };
