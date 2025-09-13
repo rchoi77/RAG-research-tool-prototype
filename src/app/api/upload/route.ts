@@ -2,12 +2,6 @@ import { processPdf } from "@/lib/process-pdf";
 import fs from "node:fs/promises";
 import path from 'node:path';
 
-
-export async function GET() {
-  console.log("UPLOAD GET HIT");
-  return Response.json({ status: "API alive" });
-}
-
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();

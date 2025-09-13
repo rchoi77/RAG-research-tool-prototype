@@ -10,11 +10,10 @@ const embeddingModel = 'openai/text-embedding-3-small';
 const maxRetrievedChunks = 4;
 
 const generateChunks = (input: string): string[] => {
-  // TODO: revise chunking delimiter, because right now this does nothing.
   // Do we want chunking done by the pdf parser, or here, where we generate the embeddings?
   return input
     .trim()
-    .split('NEED_NEW_DELIMITER_HERE')
+    .split(/\n\s*\n/)
     .filter(i => i !== '');
 };
 
@@ -49,7 +48,6 @@ export const findRelevantContent = async (userQuery: string) => {
       content: embeddings.content,
       similarity,
       filename: embeddings.filename,
-      pageNum: embeddings.pageNum,
     })
     .from(embeddings)
     .where(gt(similarity, 0.5))

@@ -6,8 +6,9 @@ import { useState } from 'react';
 export default function Chat() {
   const [input, setInput] = useState('');
   const { messages, sendMessage } = useChat();
+  // TODO: add key to whatever was raising an error in here
   return (
-    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
+    <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch p-4">
       <div className="space-y-4">
         {messages.map(m => (
           <div key={m.id} className="whitespace-pre-wrap">
